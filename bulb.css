@@ -1,0 +1,117 @@
+body{
+    margin:0;
+    font-family: poppins, sans-serif;
+    background:#000;
+}
+
+section{
+    display: flex;
+    height:100vh;
+    justify-content: center;
+    align-items: center;
+    margin-top: -4rem;
+}
+
+.wire{
+    height:50%;
+    border-left: 3px dashed rgb(255, 0, 0);
+    align-self: flex-start;
+    transform: translate(-48px, 0);
+    z-index: -1;
+    transition: border 0.5s;
+}
+
+.bulb{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tip{
+    height: 10px;
+    width: 20px;
+    border: 2px solid;
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    transition: 5s all;
+    position:absolute;
+    top:-10px;
+    transition-delay: 0.5;
+    background: #ff0000;
+}
+
+.holder{
+    height: 120px;
+    width: 90px;
+    border: 2px solid;
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    z-index: 0;
+    transition: 5s all;
+    transition-delay: 0.5;
+    background: #007bff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.holder div{
+    width: 100%;
+    border-bottom: 3px solid rgb(212, 9, 9);
+    height: 17px;
+    border-radius: 100%;
+    box-sizing: border-box;
+}
+
+.holder div:nth-child(1){
+    margin-top: 14px;
+    width: 90%;
+}
+
+.glass{
+    border-radius: 50%;
+    width: 170px;
+    height: 190px;
+    border: 2px solid rgb(255, 0, 0);
+    position: absolute;
+    top: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+    transition: 5s all;
+    background: #010000;
+    color: white;
+}
+
+.bulb{
+    cursor: pointer;
+}
+
+.bulb:hover .holder{
+    background: hsl(32, 100%, 49%);
+}
+
+.bulb:hover .tip{
+    background: #59ff00;
+}
+
+.bulb:hover ~ .hover{
+    border-left: 3px solid red;
+}
+
+.glass span{
+    transition: 2.5s all;
+    font-size: 14px;
+}
+
+.bulb:hover .glass span{
+    opacity: 0;
+}
+
+.bulb:hover .glass{
+    background: rgb(255, 162, 0);
+    box-shadow: 0 120px 200px 150px rgb(255, 162, 0);
+}
